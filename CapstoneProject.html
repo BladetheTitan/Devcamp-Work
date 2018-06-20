@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset='UTF-8'>
+        <title></title>
+        <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
+        
+        <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
+        
+        <style>
+            body {
+                margin: 0px;
+            }
+            
+            html {
+                font-family: 'Oxygen', sans-serif;
+            }
+            
+            .navbar {
+                background: #003300;
+            }
+            
+            .navbar div {
+                display: none;
+            }
+            
+            .navbar .toogle,
+            .navbar .brand {
+                display: inline-block;
+            }
+            
+            .navbar .link {
+                display: block;
+                text-align: center;
+                padding: 1em;
+                background: #009900;
+                color: white;
+            }
+            
+            .navbar .link:hover,
+            .navbar .link:active {
+                color: #009900;
+                background: white;
+            }
+            
+            .navbar .brand {
+                width: 10em;
+                text-align: center;
+                padding: 1em;
+                color: white;
+            }
+            
+            .navbar a {
+                text-decoration: none;
+            }
+            
+            .navbar .toogle {
+                padding: 1em;
+                color: black;
+            }
+            
+            @media (min-width: 48em) {
+                .navbar {
+                    display: flex;
+                }
+                
+                .navbar div {
+                    display: flex;
+                }
+                
+                .navbar .left,
+                .navbar .right {
+                    display: flex;
+                    flex: 1;
+                }
+                
+                .navbar .link {
+                    width: auto;
+                }
+                
+                .navbar .right {
+                    justify-content: flex-end;
+                }
+                
+                .navbar .toogle {
+                    display: none;
+                }
+            }
+            
+            @media(max-width: 48em) {
+                .navbar .active .toogle {
+                    background: Navy;
+                    color: white;
+                }
+                
+                .navbar .brand {
+                    text-align: left;
+                }
+                
+                .navbar .active div {
+                    display: block;
+                }
+            }
+        </style>
+    
+    </head>
+    
+    <body>
+        <div class="navbar">
+            <a href="#" class="toogle" id="navTri">
+                <i class="fas fa-bars"></i>
+            </a>
+            <a href="#" class="brand">Norland</a>
+            
+            <div class="left">
+                <a href="#" class="link">Interests</a>
+                <a href="#" class="link">Applications</a>
+            </div>
+            
+            <div class="right">
+                <a href="#" class="link">Apply</a>
+            </div>
+            
+        </div>
+        
+        
+    </body>
+    
+    <script>
+        const navHamburger = document.querySelector('#navTri');
+        
+        navHamburger.addEventListener('click', (e) => {
+            navHamburger.parentElement.classList.toogle('active');
+        })
+     </script>
+    
+</html>
